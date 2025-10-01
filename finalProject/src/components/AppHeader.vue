@@ -1,24 +1,3 @@
-<!-- <script setup>
-import { useEventStore } from '@/stores/EventStore';
-
-const store = useEventStore();
-
-</script>
-
-<template>
-    <header class="py-6 mb-8 border-b border-gray-200">
-      <h1 class="text-4xl font-extrabold text-indigo-700 tracking-tight">
-        Local Event Hub
-      </h1>
-      <div class="flex items-center text-sm mt-2 text-gray-500">
-        User ID:
-        <span class="font-mono text-gray-700 ml-1 truncate">
-          {{ store.userId || "Loading..." }}
-        </span>
-      </div>
-    </header>
-</template> -->
-
 <script setup>
 import { computed } from 'vue';
 import { useEventStore } from '@/stores/EventStore';

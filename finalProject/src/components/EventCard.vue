@@ -1,49 +1,8 @@
-<!-- <script setup>
-import { computed } from "vue"
-
-const { event } = defineProps({
-  event: { type: Object, required: true }
-})
-
-const formattedDate = computed(() => {
-  if (!event.date) return "TBD"
-  try {
-    return new Date(event.date).toLocaleDateString("en-US", {
-      weekday: "long",
-      year: "numeric",
-      month: "long",
-      day: "numeric"
-    })
-  } catch {
-    return event.date
-  }
-})
-
-const truncatedHostId = computed(() => {
-  return event.hostId
-    ? event.hostId.substring(0, 8) + "..."
-    : "system"
-})
-</script>
-
-<template>
-  <div class="bg-white p-6 rounded-xl shadow border border-gray-200">
-    <h3 class="text-lg font-bold mb-2">
-      {{ event.title || "Untitled Event" }}
-    </h3>
-    <p class="text-sm text-gray-500 mb-4">
-      Hosted by <span class="font-mono">{{ truncatedHostId }}</span>
-    </p>
-
-    <div class="space-y-2 text-sm text-gray-700">
-      <div>Date: {{ formattedDate }}</div>
-      <div>Location: {{ event.location || "Unknown" }}</div>
-    </div>
-  </div>
-</template> -->
-
 <script setup>
 import { computed } from "vue"
+
+// Define emits to communicate with the parent component (EventsList)
+const emit = defineEmits(['view-details']);
 
 const { event } = defineProps({
     event: { type: Object, required: true }
@@ -79,13 +38,18 @@ const truncatedHostId = computed(() => {
 </script>
 
 <template>
-    <!-- Enhanced Card Styling: white background, dark gray in dark mode, hover shadow/ring -->
-    <div class="
-        bg-white dark:bg-gray-800 p-6 rounded-xl shadow-lg 
-        border border-gray-100 dark:border-gray-700 
-        transition-all duration-300 ease-in-out 
-        transform hover:shadow-2xl hover:scale-[1.02] hover:ring-4 hover:ring-indigo-100 dark:hover:ring-indigo-600/30
-    ">
+    <!-- Enhanced Card Styling: Added cursor-pointer and @click to open modal -->
+    <div 
+        @click="emit('view-details', event)"
+        class="
+            w-full  <!-- ADDED W-FULL HERE -->
+            bg-white dark:bg-gray-800 p-6 rounded-xl shadow-lg 
+            border border-gray-100 dark:border-gray-700 
+            transition-all duration-300 ease-in-out 
+            transform hover:shadow-2xl hover:scale-[1.02] hover:ring-4 hover:ring-indigo-100 dark:hover:ring-indigo-600/30
+            cursor-pointer 
+        "
+    >
         <!-- Event Title: prominent and theme-colored -->
         <h3 class="text-xl font-extrabold mb-2 text-indigo-700 dark:text-indigo-400">
             {{ event.title || "Untitled Event" }}
