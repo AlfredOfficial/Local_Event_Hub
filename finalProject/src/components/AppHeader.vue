@@ -15,7 +15,7 @@ const handleRefresh = () => {
 </script>
 
 <template>
-    <header class="py-6 mb-8 border-b border-gray-100 dark:border-gray-800">
+    <header class="py-4 mb-6 border-b border-gray-100 dark:border-gray-800">
         <div class="flex flex-col sm:flex-row sm:justify-between sm:items-center">
             
             <!-- Logo / Title Section -->

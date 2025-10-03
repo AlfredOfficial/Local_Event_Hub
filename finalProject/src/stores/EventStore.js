@@ -86,6 +86,7 @@ export const useEventStore = defineStore("events", () => {
         const eventData = {
             ...newEvent,
             hostId: userId.value, // Ilagay ang host ID
+            date: newEvent.date ? new Date(newEvent.date).toISOString() : newEvent.date,
         };
 
         try {
@@ -144,7 +145,39 @@ export const useEventStore = defineStore("events", () => {
             error.value = `Error deleting event: ${err.message}`;
         }
     }
-    // -------------------------------------------
+    //action for save user comments on specific event
+    async function saveComment({ eventId, comment }) {
+        error.value = null;
+
+        try {
+            // PATCH request para i-update ang specific field na 'userComment'
+            const response = await fetch(`${API_URL}/${eventId}`, {
+                method: 'PATCH', 
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ userComment: comment }), 
+            });
+
+            if (!response.ok) {
+                throw new Error(`Failed to save comment: ${response.statusText}`);
+            }
+
+            // Kunin ang na-update na event mula sa server
+            const updatedEvent = await response.json(); 
+
+            // I-update ang local state
+            const index = events.value.findIndex(e => e.id === eventId);
+            if (index !== -1) {
+                // I-replace ang event object sa events array gamit ang na-update na data
+                // Ginagamit ang spread para sa proper reactivity.
+                events.value[index] = updatedEvent; 
+            }
+
+        } catch (err) {
+            console.error("API Comment Error:", err);
+            error.value = `Error saving comment: ${err.message}`;
+        }
+    }
+
 
     return {
         events,
@@ -158,5 +191,6 @@ export const useEventStore = defineStore("events", () => {
         initApp,
         addEvent,
         deleteEvent, // BINAGO: Idinagdag sa return
+        saveComment, // Idinagdag sa return
     }
 })

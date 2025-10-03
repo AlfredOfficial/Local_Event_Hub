@@ -5,7 +5,11 @@
       "title": "sss",
       "date": "2025-10-02",
       "location": "San Miguel Area",
-      "hostId": "user_80YDIT"
+      "hostId": "user_80YDIT",
+      "userComment": {
+        "eventId": "e4e6",
+        "comment": "hhshshsh"
+      }
     },
     {
       "id": "f322",
@@ -26,21 +30,33 @@
       "title": "AI Enhancement Learning",
       "date": "2025-10-09",
       "location": "Via Zoom",
-      "hostId": "user_OLFG8T"
+      "hostId": "user_OLFG8T",
+      "userComment": {
+        "eventId": "56df",
+        "comment": "i hate namn this course, na para bang curse na."
+      }
     },
     {
       "id": "c510",
       "title": "meeting with client",
       "date": "2025-10-02",
       "location": "Via Gmeet",
-      "hostId": "user_FI96P3"
+      "hostId": "user_FI96P3",
+      "userComment": {
+        "eventId": "c510",
+        "comment": "I can't sleep najud"
+      }
     },
     {
       "id": "4abb",
       "title": "Community Service",
       "date": "2025-10-25",
       "location": "San Miguel Danao Bohol",
-      "hostId": "user_EV5BBZ"
+      "hostId": "user_EV5BBZ",
+      "userComment": {
+        "eventId": "4abb",
+        "comment": "para akong isang hero sa aking na gwa"
+      }
     },
     {
       "id": "55eb",
@@ -48,6 +64,31 @@
       "date": "2025-10-22",
       "location": "San Miguel Danao Bohol",
       "hostId": "user_EV5BBZ"
+    },
+    {
+      "id": "9fca",
+      "title": "Machine Learning Session. ",
+      "date": "2025-10-09",
+      "location": "Via Gmeet",
+      "hostId": "user_N5E84L"
+    },
+    {
+      "id": "c6cc",
+      "title": "Tourism Day",
+      "date": "2025-10-03T00:00:00.000Z",
+      "location": "Barangay Hall",
+      "hostId": "user_6Q2ASG"
+    },
+    {
+      "id": "e7c2",
+      "title": "Teacher's Day Celebration",
+      "date": "2025-10-03T00:00:00.000Z",
+      "location": "DTC ground",
+      "hostId": "user_ATJDAS",
+      "userComment": {
+        "eventId": "e7c2",
+        "comment": "Happy Teacher's Day to all Teacher's out there, your effort and determination to teach us is un comparable. Hope that God will guide all of you every day. Have a nice day mga maam and sir."
+      }
     }
   ]
 }

@@ -1,7 +1,12 @@
 <script setup>
 import { useEventStore } from '@/stores/EventStore';
 import EventCard from './EventCard.vue';
+
 const store = useEventStore();
+
+function handleCommentSubmit(eventId, comment) {
+    store.saveComment({ eventId, comment });
+}
 </script>
 
 <template>
@@ -27,6 +32,7 @@ const store = useEventStore();
                 v-for="event in store.sortedEvents"
                 :key="event.id"
                 :event="event"
+                @submit-comment="handleCommentSubmit(event.id, $event)"
             />
         </div>
 

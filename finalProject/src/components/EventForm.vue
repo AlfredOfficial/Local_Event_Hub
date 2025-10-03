@@ -52,13 +52,13 @@ const isFormValid = computed(() => {
           </h2>
 
           <!-- Error Message -->
-          <div 
+          <!-- <div 
             v-if="store.error" 
             class="bg-red-100 dark:bg-red-900 border border-red-400 text-red-700 dark:text-red-300 px-4 py-3 rounded-lg mb-6"
           >
             <strong class="font-bold">Error:</strong>
             <span class="ml-2">{{ store.error }}</span>
-          </div>
+          </div> -->
 
           <!-- Form -->
           <form @submit.prevent="store.addEvent" class="grid grid-cols-1 md:grid-cols-2 gap-6">
