@@ -20,6 +20,7 @@ export const useEventStore = defineStore("events", () => {
         title: "",
         date: "",
         location: "",
+        description: "",
     })
 
     // --- GETTERS ---

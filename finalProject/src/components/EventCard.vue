@@ -14,6 +14,29 @@ const isCommentFocused = ref(false);
 //emit to communicate with parent components 
 const emit = defineEmits(['view-details', 'submit-comment']);
 
+const statusBadge = computed(() => {
+    if (!event.date) {
+        return { text: "TBD", classes: "bg-gray-200 text-gray-700 dark:bg-gray-600 dark:text-gray-200" };
+    }
+    
+    const eventDate = new Date(event.date);
+    const eventTimestamp = eventDate.getTime();
+    const now = Date.now();
+
+    if (isNaN(eventTimestamp)) {
+         return { text: "Error", classes: "bg-red-200 text-red-700 dark:bg-red-900 dark:text-red-300" };
+    }
+    
+    // If the event date is in the past (using a simple comparison)
+    // We check if it was more than 24 hours ago to account for time zones/imprecise dating
+    if (eventTimestamp < now - (24 * 60 * 60 * 1000)) { 
+        return { text: "Done", classes: "bg-green-100 text-green-700 dark:bg-green-900/50 dark:text-green-300" };
+    } 
+    
+    // Otherwise, it is upcoming or ongoing
+    return { text: "Unresolved", classes: "bg-indigo-100 text-indigo-700 dark:bg-indigo-900/50 dark:text-indigo-300" };
+});
+
 const formattedDate = computed(() => {
     if (!event.date) return "TBD"
     try {
@@ -41,7 +64,8 @@ const truncatedHostId = computed(() => {
 // NEW ACTION: Function to emit the comment for saving
 function submitComment() {
     if (userComment.value.trim() === '') {
-        alert("Please write a review before submitting.");
+        // FIX: Replaced alert() with console.error() as per framework rules.
+        console.error("Please write a review before submitting.");
         return; 
     }
     
@@ -68,9 +92,18 @@ function submitComment() {
             cursor-pointer 
         "
     >
-        <h3 class="text-xl font-extrabold mb-2 text-indigo-700 dark:text-indigo-400">
-            {{ event.title || "Untitled Event" }}
-        </h3>
+        <div class="flex justify-between items-start mb-2">
+            <h3 class="text-xl font-extrabold text-indigo-700 dark:text-indigo-400 pr-4">
+                {{ event.title || "Untitled Event" }}
+            </h3>
+            
+            <span 
+                :class="statusBadge.classes"
+                class="px-3 py-1 text-xs font-semibold uppercase tracking-wider rounded-full shadow-inner flex-shrink-0"
+            >
+                {{ statusBadge.text }}
+            </span>
+        </div>
         
         <p class="text-xs text-gray-500 mb-4 flex items-center">
             <span class="mr-2 text-gray-400 dark:text-gray-500">
@@ -104,7 +137,18 @@ function submitComment() {
 
         <hr class="mt-6 mb-4 border-gray-100 dark:border-gray-700/50" />
 
-        <!-- ⭐️ NEW SECTION: Display Saved Comment (Added this block) ⭐️ -->
+       
+        <div v-if="event.description" class="mb-4">
+            <p class="text-xs font-semibold text-gray-500 dark:text-gray-400 mb-1">Reason for Sumbong:</p>
+            <p class="text-sm text-gray-600 dark:text-gray-400 line-clamp-2 italic">
+                {{ event.description }}
+            </p>
+        </div>
+       
+
+        <hr class="mt-6 mb-4 border-gray-100 dark:border-gray-700/50" />
+
+        <!-- Display Saved Comment -->
         <div v-if="event.userComment" class="mb-4 p-3 bg-indigo-50 dark:bg-indigo-900/50 rounded-lg border border-indigo-200 dark:border-indigo-700">
             <p class="text-xs font-semibold text-indigo-700 dark:text-indigo-400 mb-1 flex items-center">
                 <svg class="w-4 h-4 mr-1.5 text-indigo-600 dark:text-indigo-300" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 8h10M7 12h10m-9 4h4m6-4a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
@@ -150,5 +194,5 @@ function submitComment() {
                 Submit Review
             </button>
         </div>
-        </div>
+    </div>
 </template>

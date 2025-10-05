@@ -13,7 +13,7 @@ function handleCommentSubmit(eventId, comment) {
     <section class="mt-10 pb-10">
       
         <h2 class="text-3xl font-extrabold text-indigo-700 dark:text-indigo-400 mb-6 pb-2 border-b-4 border-indigo-200 dark:border-indigo-600 inline-block pr-6 tracking-tight">
-            Upcoming Events ({{ store.events.length }})
+            Unresolved Issues ({{ store.events.length }})
         </h2>
 
         

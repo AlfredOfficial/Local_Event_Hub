@@ -1,94 +1,19 @@
 {
   "events": [
     {
-      "id": "e4e6",
-      "title": "sss",
-      "date": "2025-10-02",
-      "location": "San Miguel Area",
-      "hostId": "user_80YDIT",
-      "userComment": {
-        "eventId": "e4e6",
-        "comment": "hhshshsh"
-      }
+      "id": "e16e",
+      "title": "There will be a ni sangko nga wire sa amoa nga house, need action immediately kay basin ma sunog huhuhuu",
+      "date": "2025-10-05T00:00:00.000Z",
+      "location": "Purok 1, Amoa Balay",
+      "hostId": "user_ACQBZ8"
     },
     {
-      "id": "f322",
-      "title": "Meeting ",
-      "date": "2025-10-10",
-      "location": "Via Online Class",
-      "hostId": "user_2T7VKQ"
-    },
-    {
-      "id": "fdfc",
-      "title": "Community Clean Up",
-      "date": "2025-10-17",
-      "location": "Poblacion Danao Bohol",
-      "hostId": "user_K5X6QT"
-    },
-    {
-      "id": "56df",
-      "title": "AI Enhancement Learning",
-      "date": "2025-10-09",
-      "location": "Via Zoom",
-      "hostId": "user_OLFG8T",
-      "userComment": {
-        "eventId": "56df",
-        "comment": "i hate namn this course, na para bang curse na."
-      }
-    },
-    {
-      "id": "c510",
-      "title": "meeting with client",
-      "date": "2025-10-02",
-      "location": "Via Gmeet",
-      "hostId": "user_FI96P3",
-      "userComment": {
-        "eventId": "c510",
-        "comment": "I can't sleep najud"
-      }
-    },
-    {
-      "id": "4abb",
-      "title": "Community Service",
-      "date": "2025-10-25",
-      "location": "San Miguel Danao Bohol",
-      "hostId": "user_EV5BBZ",
-      "userComment": {
-        "eventId": "4abb",
-        "comment": "para akong isang hero sa aking na gwa"
-      }
-    },
-    {
-      "id": "55eb",
-      "title": "Barangay Asimbly",
-      "date": "2025-10-22",
-      "location": "San Miguel Danao Bohol",
-      "hostId": "user_EV5BBZ"
-    },
-    {
-      "id": "9fca",
-      "title": "Machine Learning Session. ",
-      "date": "2025-10-09",
-      "location": "Via Gmeet",
-      "hostId": "user_N5E84L"
-    },
-    {
-      "id": "c6cc",
-      "title": "Tourism Day",
-      "date": "2025-10-03T00:00:00.000Z",
-      "location": "Barangay Hall",
-      "hostId": "user_6Q2ASG"
-    },
-    {
-      "id": "e7c2",
-      "title": "Teacher's Day Celebration",
-      "date": "2025-10-03T00:00:00.000Z",
-      "location": "DTC ground",
-      "hostId": "user_ATJDAS",
-      "userComment": {
-        "eventId": "e7c2",
-        "comment": "Happy Teacher's Day to all Teacher's out there, your effort and determination to teach us is un comparable. Hope that God will guide all of you every day. Have a nice day mga maam and sir."
-      }
+      "id": "271c",
+      "title": "flood control",
+      "date": "2025-10-06T00:00:00.000Z",
+      "location": "Hall",
+      "description": "asa ang flood control?",
+      "hostId": "user_EQ59Q9"
     }
   ]
 }

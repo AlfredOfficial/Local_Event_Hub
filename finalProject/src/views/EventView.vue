@@ -6,7 +6,6 @@ import EventForm from "../components/EventForm.vue"
 import EventSection from "../components/EventSection.vue"
 import ErrorMessage from "../components/ErrorMessage.vue"
 
-
 const store = useEventStore()
 
 onMounted(() => {
@@ -24,6 +23,6 @@ onMounted(() => {
     <EventForm />
 
     <EventSection />
-
+    
   </div>
 </template>
